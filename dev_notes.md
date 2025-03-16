@@ -20,6 +20,11 @@
     	- show contacts
 
 
+        - either have a 'show interactions' button or else make that list view of
+        them be the default that is shown whenever 'add new contact, interaction'
+        or 'show contacts' is closed out
+
+
 
     then there can be a component below that uses the fade in/out conditional component rendering that shows either:
 
