@@ -83,7 +83,7 @@ to gain expertise sooner
 
 create useContacts.ts and useInteractions.ts composable, or possibly combine both into one file
 
-create contact and interaction types or interfaces
+    create contact and interaction types or interfaces
 
 Make initial data stucture for how contacts and interactions will be saved and related to each other
 
