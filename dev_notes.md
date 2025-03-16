@@ -69,7 +69,29 @@
 
     Make initial data stucture for how contacts and interactions will be saved and related to each other
 
+        create contact and its fields
+
+            name
+            type (friend, work colleague, make a custom list of contact types that the user can define)
+
+        create a data object that can store list of custom contact types / interaction types that gets
+        loaded and filled into the combo box selections on future use
+
+        create interaction and its fields
+
+        give each contact a unique id
+
+        give each interaction a unique id
+
+        let the contact have a collection of interaction ids that it relates to
+        rather than having it store the actual interaction data in its collection
+
+        the interaction should also have a reference of what contact ID it relates to
+
+
     Make initial placeholder type main view component
+
+    Get buttons to work (add, edit, save, delete for both contacts and interactions)
 
     tidy up dev_notes.md to have better appearance when viewing on github
     (break long lines of text to avoid getting horizontal scrollbar on it)
