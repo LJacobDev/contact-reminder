@@ -25,26 +25,26 @@ main page shows a set of 3 main buttons in a row at the top like a navbar
 
 then there can be a component below that uses the fade in/out conditional component rendering that shows either:
 
-- an add new contact form
+    - an add new contact form
 
-- an edit existing contact form (can be add same as new one if I make it that way)
+    - an edit existing contact form (can be add same as new one if I make it that way)
 
-- a component that is a list of contacts, where clicking on one gives you the edit contact form
+    - a component that is a list of contacts, where clicking on one gives you the edit contact form
 
-- a component that allows adding a new interaction, which will also be the one to edit an interaction
+    - a component that allows adding a new interaction, which will also be the one to edit an interaction
 
-  (adding new will create the interaction, and bring to edit view. edit view will have save and delete buttons)
+    (adding new will create the interaction, and bring to edit view. edit view will have save and delete buttons)
 
-- a component that is a grid of interactions
+    - a component that is a grid of interactions
 
-  - the interactions have date, contact, summary of thing done,
-    summary of next thing to do, date to do next thing at, viewable from the list
+    - the interactions have date, contact, summary of thing done,
+        summary of next thing to do, date to do next thing at, viewable from the list
 
-  then you can sort them by date done, but the usual order will be sorted by date to do next thing at
+      then you can sort them by date done, but the usual order will be sorted by date to do next thing at
 
-  probably a combo box or something to select whether to sort by date done or date to do next thing at
+    probably a combo box or something to select whether to sort by date done or date to do next thing at
 
-- make a thing that either shows all, or I guess has some kind of pagination that only shows (selectable per page of 10, 20, 50, all)
+    - make a thing that either shows all, or I guess has some kind of pagination that only shows (selectable per page of 10, 20, 50, all)
 
 - interactions should be able to be shown as a list of rows in general, but also,
 - there should not only be a 'view contact details' component / view, there should also be a list shown of interaction history for that contact
