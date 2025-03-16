@@ -56,11 +56,19 @@
 
     		it's just that I'm not sure whether it merits having other 'url links' to go to the different things but I imagine it actually should so yes I want to use the vue router for this
 
-# Things to remember / add / do with this
+# Things to remember
 
     I'm adding vue router and want to use it for /contacts, /interactions, /contacts/edit and that kind of thing
 
     I'm adding 'Vitest' unit testing and I want to make use of it
+
+# Things to do next
+
+    Clear out vite scaffolding
+
+    Make initial data stucture for how contacts and interactions will be saved and related to each other
+
+    Make initial placeholder type main view component
 
     tidy up dev_notes.md to have better appearance when viewing on github
     (break long lines of text to avoid getting horizontal scrollbar on it)
