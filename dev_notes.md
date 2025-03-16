@@ -58,7 +58,8 @@
 
 # Things to remember
 
-    I'm adding vue router and want to use it for /contacts, /interactions, /contacts/edit and that kind of thing
+    I'm adding vue router and want to use it for /contacts,
+    /interactions, /contacts/edit and that kind of thing
 
     I'm adding 'Vitest' unit testing and I want to make use of it
 
