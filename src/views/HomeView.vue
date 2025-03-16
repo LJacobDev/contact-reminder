@@ -8,6 +8,6 @@
     <!-- Original view from the Vite scaffolding files -->
     <!-- <TheWelcome /> -->
 
-    HomeView contents
+    HomeView contents (preferably will be just one component with its own sub components)
   </main>
 </template>
