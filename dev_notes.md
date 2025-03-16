@@ -1,66 +1,60 @@
 # General point of this repo
 
-    rapidly use whatever I can remember about vue without looking it up first,
+rapidly use whatever I can remember about vue without looking it up first,
 
-    to make a front end only / localstorage json database styled app about keeping
-    in contact with people.
+to make a front end only / localstorage json database styled app about keeping
+in contact with people.
 
-    It uses local storage so that it can be run off something like github pages
-    or locally without needing to contact a back end anywhere
+It uses local storage so that it can be run off something like github pages
+or locally without needing to contact a back end anywhere
 
 # Overview of design
 
-    main page shows a set of 3 main buttons in a row at the top like a navbar
+main page shows a set of 3 main buttons in a row at the top like a navbar
+
+    - add new contact
+
+    - add new interaction
+
+    - show contacts
 
 
-    	- add new contact
+    - either have a 'show interactions' button or else make that list view of
+    them be the default that is shown whenever 'add new contact, interaction'
+    or 'show contacts' is closed out
 
-    	- add new interaction
+then there can be a component below that uses the fade in/out conditional component rendering that shows either:
 
-    	- show contacts
+- an add new contact form
 
+- an edit existing contact form (can be add same as new one if I make it that way)
 
-        - either have a 'show interactions' button or else make that list view of
-        them be the default that is shown whenever 'add new contact, interaction'
-        or 'show contacts' is closed out
+- a component that is a list of contacts, where clicking on one gives you the edit contact form
 
+- a component that allows adding a new interaction, which will also be the one to edit an interaction
 
+  (adding new will create the interaction, and bring to edit view. edit view will have save and delete buttons)
 
-    then there can be a component below that uses the fade in/out conditional component rendering that shows either:
+- a component that is a grid of interactions
 
-    - an add new contact form
+  - the interactions have date, contact, summary of thing done,
+    summary of next thing to do, date to do next thing at, viewable from the list
 
-    - an edit existing contact form (can be add same as new one if I make it that way)
+  then you can sort them by date done, but the usual order will be sorted by date to do next thing at
 
-    - a component that is a list of contacts, where clicking on one gives you the edit contact form
+  probably a combo box or something to select whether to sort by date done or date to do next thing at
 
-    - a component that allows adding a new interaction, which will also be the one to edit an interaction
+- make a thing that either shows all, or I guess has some kind of pagination that only shows (selectable per page of 10, 20, 50, all)
 
-        (adding new will create the interaction, and bring to edit view.  edit view will have save and delete buttons)
+- interactions should be able to be shown as a list of rows in general, but also,
+- there should not only be a 'view contact details' component / view, there should also be a list shown of interaction history for that contact
+- this contact's interaction history might be a separate page or something that can be hid/shown underneath contact details,
+- possibly include two ways of showing it, as a list of rows with dates and brief titles to click on for details,
+- and maybe as well a way to show rows of the interactions but where the full textarea of all the information is also shown to scroll through rather than having to click on each one
 
-    - a component that is a grid of interactions
+I think I'd rather use vue router than the hide/show conditional rendering, so that it is more like going to different pages.. however, even that is something that can happen within a div kind of component and the navbar at the top can still stay the same..
 
-        - the interactions have date, contact, summary of thing done,
-        summary of next thing to do, date to do next thing at, viewable from the list
-
-    	then you can sort them by date done, but the usual order will be sorted by date to do next thing at
-
-    	probably a combo box or something to select whether to sort by date done or date to do next thing at
-
-
-    - make a thing that either shows all, or I guess has some kind of pagination that only shows (selectable per page of 10, 20, 50, all)
-
-
-    - interactions should be able to be shown as a list of rows in general, but also,
-    - there should not only be a 'view contact details' component / view, there should also be a list shown of interaction history for that contact
-    - this contact's interaction history might be a separate page or something that can be hid/shown underneath contact details,
-    - possibly include two ways of showing it, as a list of rows with dates and brief titles to click on for details,
-    - and maybe as well a way to show rows of the interactions but where the full textarea of all the information is also shown to scroll through rather than having to click on each one
-
-
-    	I think I'd rather use vue router than the hide/show conditional rendering, so that it is more like going to different pages.. however, even that is something that can happen within a div kind of component and the navbar at the top can still stay the same..
-
-    		it's just that I'm not sure whether it merits having other 'url links' to go to the different things but I imagine it actually should so yes I want to use the vue router for this
+    it's just that I'm not sure whether it merits having other 'url links' to go to the different things but I imagine it actually should so yes I want to use the vue router for this
 
 # Things to remember
 
@@ -87,61 +81,60 @@ to gain expertise sooner
 
 # Things to do next
 
-    Make initial data stucture for how contacts and interactions will be saved and related to each other
+Make initial data stucture for how contacts and interactions will be saved and related to each other
 
-        each contact and each interaction will have a unique ID, probably a UUID type number
+    each contact and each interaction will have a unique ID, probably a UUID type number
 
-        they will be saved in localstorage individually where the localstorage key is the ID number
+    they will be saved in localstorage individually where the localstorage key is the ID number
 
-        then there will also be a 'list of contacts' that is just an array of the contact IDs stored as an item in localstorage
+    then there will also be a 'list of contacts' that is just an array of the contact IDs stored as an item in localstorage
 
-        so the list of contacts can be retrieved and then localstorage can be queried by these IDs to get data about any given contact
+    so the list of contacts can be retrieved and then localstorage can be queried by these IDs to get data about any given contact
 
-        each contact field will then have an array of interaction IDs related to it to retrieve those
+    each contact field will then have an array of interaction IDs related to it to retrieve those
 
-        but there will also be a separate main array of all interaction ids as well so that all can be viewed in rows
+    but there will also be a separate main array of all interaction ids as well so that all can be viewed in rows
 
-        each interaction also has a reference to the contact it relates to
-
-
-
-        create 'create, load/retrieve, save/update, and delete' functions
-
-        create unit tests for all these CRUD operation functions
+    each interaction also has a reference to the contact it relates to
 
 
-        create contact object data structure and its fields
 
-            name
-            type (friend, work colleague, make a custom list of contact types that the user can define)
-            maybe lastContactDateTime, nextContactDateTime (or lastContactDate, lastContactTime... separately?)
-            (or probably  lastcontactdate will just be stored in interaction as its own date, and nextcontactdate can be an interaction's 'next contact date')
-            phone number
-            email
-            website
-            address
+    create 'create, load/retrieve, save/update, and delete' functions
 
-        create a data object that can store list of custom contact types / interaction types that gets
-        loaded and filled into the combo box selections on future use
-
-        create interaction and its fields
-
-        give each contact a unique id
-
-        give each interaction a unique id
-
-        let the contact have a collection of interaction ids that it relates to
-        rather than having it store the actual interaction data in its collection
-
-        the interaction should also have a reference of what contact ID it relates to
+    create unit tests for all these CRUD operation functions
 
 
-    Make initial placeholder type main view component
+    create contact object data structure and its fields
 
-    Get buttons to work (add, edit, save, delete for both contacts and interactions)
+        name
+        type (friend, work colleague, make a custom list of contact types that the user can define)
+        maybe lastContactDateTime, nextContactDateTime (or lastContactDate, lastContactTime... separately?)
+        (or probably  lastcontactdate will just be stored in interaction as its own date, and nextcontactdate can be an interaction's 'next contact date')
+        phone number
+        email
+        website
+        address
 
-    tidy up dev_notes.md to have better appearance when viewing on github
-    (break long lines of text to avoid getting horizontal scrollbar on it)
+    create a data object that can store list of custom contact types / interaction types that gets
+    loaded and filled into the combo box selections on future use
+
+    create interaction and its fields
+
+    give each contact a unique id
+
+    give each interaction a unique id
+
+    let the contact have a collection of interaction ids that it relates to
+    rather than having it store the actual interaction data in its collection
+
+    the interaction should also have a reference of what contact ID it relates to
+
+Make initial placeholder type main view component
+
+Get buttons to work (add, edit, save, delete for both contacts and interactions)
+
+tidy up dev_notes.md to have better appearance when viewing on github
+(break long lines of text to avoid getting horizontal scrollbar on it)
 
 # Things done so far
 
