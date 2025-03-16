@@ -134,7 +134,6 @@ Make initial placeholder type main view component
 Get buttons to work (add, edit, save, delete for both contacts and interactions)
 
 tidy up dev_notes.md to have better appearance when viewing on github
-(break long lines of text to avoid getting horizontal scrollbar on it)
 
 # Things done so far
 
