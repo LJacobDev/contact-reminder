@@ -73,8 +73,6 @@
 
 # Things to do next
 
-    Clean up vite scaffolding files but leave them in place to fill with app contents
-
     Make initial data stucture for how contacts and interactions will be saved and related to each other
 
         create contact and its fields
@@ -114,3 +112,8 @@
     This was highly informative about how a Vue project's structure can be organized.  This time, rather than
     erasing everything and  making everything from memory, it is helpful to see the structure already laid out
     and to fill in with this particular app's contents next.
+
+    Took more time to fully break down a complete understanding of every line of every component and main file,
+    and tinkered with things.  Tried running npx serve in order to test the 'README.md' link in TheWelcome between
+    running in a Vite dev server and running dist in a non-dev server to see the different behaviours.  Clicking
+    the link while running dev server opens the readme in the IDE, where the non-dev server returns a 404 on that link.
