@@ -131,9 +131,15 @@ Make initial data stucture for how contacts and interactions will be saved and r
 
 Make initial placeholder type main view component
 
+add enough styling to make it functional and roughly placed in nice looking layout
+
 Get buttons to work (add, edit, save, delete for both contacts and interactions)
 
+come back again to add more styling polish to elements once the layout and component structure is more settled
+
 tidy up dev_notes.md to have better appearance when viewing on github
+
+go look at https://test-utils.vuejs.org/guide/ Vue Test Utils to see more about what they are used like
 
 # Things done so far
 
