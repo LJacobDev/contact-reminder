@@ -2,7 +2,7 @@
 //it appears that while vite created this import line for RouterLink and RouterView, it doesn't seem to be needed in order to access those components
 // import { RouterLink, RouterView } from 'vue-router'
 
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
