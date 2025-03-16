@@ -81,7 +81,7 @@
     but I am finding them useful to look at as references for how to organize this app,
     so I'm leaving some of them around intentionally as reminders and references
 
-    In the scaffolding files, a link to https://github.com/vuejs/awesome-vue was mentioned
+    In the scaffolding files, a link to [https://github.com/vuejs/awesome-vue](https://github.com/vuejs/awesome-vue) was mentioned
     and it should be very helpful to look at so many other examples of Vue projects
     to gain expertise sooner
 
