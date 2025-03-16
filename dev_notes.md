@@ -63,6 +63,8 @@
 
     I'm adding 'Vitest' unit testing and I want to make use of it
 
+    I normally use tailwindcss but want to get practice at using conventional css for this
+
 # Things to do next
 
     Clear out vite scaffolding
