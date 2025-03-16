@@ -81,6 +81,10 @@
     but I am finding them useful to look at as references for how to organize this app,
     so I'm leaving some of them around intentionally as reminders and references
 
+    In the scaffolding files, a link to https://github.com/vuejs/awesome-vue was mentioned
+    and it should be very helpful to look at so many other examples of Vue projects
+    to gain expertise sooner
+
 # Things to do next
 
     Make initial data stucture for how contacts and interactions will be saved and related to each other
@@ -154,3 +158,12 @@
     and tinkered with things.  Tried running npx serve in order to test the 'README.md' link in TheWelcome between
     running in a Vite dev server and running dist in a non-dev server to see the different behaviours.  Clicking
     the link while running dev server opens the readme in the IDE, where the non-dev server returns a 404 on that link.
+
+
+    Took a moment to explore the different effects of using:
+
+    "More instructions are available in <a href="/__open-in-editor?file=README.md"><code>README.md</code></a>."
+
+    versus the original of:
+
+    "More instructions are available in <a href="javascript:void(0)" @click="openReadmeInEditor"><code>README.md</code></a>."
