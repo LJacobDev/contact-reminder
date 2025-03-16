@@ -51,12 +51,22 @@
     - make a thing that either shows all, or I guess has some kind of pagination that only shows (selectable per page of 10, 20, 50, all)
 
 
+    - interactions should be able to be shown as a list of rows in general, but also,
+    - there should not only be a 'view contact details' component / view, there should also be a list shown of interaction history for that contact
+    - this contact's interaction history might be a separate page or something that can be hid/shown underneath contact details,
+    - possibly include two ways of showing it, as a list of rows with dates and brief titles to click on for details,
+    - and maybe as well a way to show rows of the interactions but where the full textarea of all the information is also shown to scroll through rather than having to click on each one
+
 
     	I think I'd rather use vue router than the hide/show conditional rendering, so that it is more like going to different pages.. however, even that is something that can happen within a div kind of component and the navbar at the top can still stay the same..
 
     		it's just that I'm not sure whether it merits having other 'url links' to go to the different things but I imagine it actually should so yes I want to use the vue router for this
 
 # Things to remember
+
+    This application doesn't use login authentication,
+    it saves and retrieves from browser localstorage
+    so it is not recommended to store sensitive data in this
 
     I'm adding vue router and want to use it for /contacts,
     /interactions, /contacts/edit and that kind of thing
@@ -75,10 +85,37 @@
 
     Make initial data stucture for how contacts and interactions will be saved and related to each other
 
-        create contact and its fields
+        each contact and each interaction will have a unique ID, probably a UUID type number
+
+        they will be saved in localstorage individually where the localstorage key is the ID number
+
+        then there will also be a 'list of contacts' that is just an array of the contact IDs stored as an item in localstorage
+
+        so the list of contacts can be retrieved and then localstorage can be queried by these IDs to get data about any given contact
+
+        each contact field will then have an array of interaction IDs related to it to retrieve those
+
+        but there will also be a separate main array of all interaction ids as well so that all can be viewed in rows
+
+        each interaction also has a reference to the contact it relates to
+
+
+
+        create 'create, load/retrieve, save/update, and delete' functions
+
+        create unit tests for all these CRUD operation functions
+
+
+        create contact object data structure and its fields
 
             name
             type (friend, work colleague, make a custom list of contact types that the user can define)
+            maybe lastContactDateTime, nextContactDateTime (or lastContactDate, lastContactTime... separately?)
+            (or probably  lastcontactdate will just be stored in interaction as its own date, and nextcontactdate can be an interaction's 'next contact date')
+            phone number
+            email
+            website
+            address
 
         create a data object that can store list of custom contact types / interaction types that gets
         loaded and filled into the combo box selections on future use
