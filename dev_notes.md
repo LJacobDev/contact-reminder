@@ -81,6 +81,10 @@ to gain expertise sooner
 
 # Things to do next
 
+create useContacts.ts and useInteractions.ts composable, or possibly combine both into one file
+
+create contact and interaction types or interfaces
+
 Make initial data stucture for how contacts and interactions will be saved and related to each other
 
     each contact and each interaction will have a unique ID, probably a UUID type number
@@ -129,9 +133,7 @@ Make initial data stucture for how contacts and interactions will be saved and r
 
     the interaction should also have a reference of what contact ID it relates to
 
-Make initial placeholder type main view component
-
-add enough styling to make it functional and roughly placed in nice looking layout
+get something in either a console.log() or in a rendered view that can show a basic 'contact' and 'interaction' object data and whether it's able to be saved and loaded to/from localstorage before going further with making forms and layouts
 
 Get buttons to work (add, edit, save, delete for both contacts and interactions)
 
@@ -165,3 +167,8 @@ go look at https://test-utils.vuejs.org/guide/ Vue Test Utils to see more about 
     versus the original of:
 
     "More instructions are available in <a href="javascript:void(0)" @click="openReadmeInEditor"><code>README.md</code></a>."
+
+
+    Make initial placeholder type main view component
+
+    add enough styling to make it functional and roughly placed in 'nice enough to develop with' looking layout
