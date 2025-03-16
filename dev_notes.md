@@ -40,7 +40,7 @@
 
     - a component that is a grid of interactions
 
-    	- the interactions have date, contact, summary of thing done,
+        - the interactions have date, contact, summary of thing done,
         summary of next thing to do, date to do next thing at, viewable from the list
 
     	then you can sort them by date done, but the usual order will be sorted by date to do next thing at
