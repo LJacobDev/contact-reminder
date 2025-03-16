@@ -67,7 +67,7 @@
 
 # Things to do next
 
-    Clear out vite scaffolding
+    Clean up vite scaffolding files but leave them in place to fill with app contents
 
     Make initial data stucture for how contacts and interactions will be saved and related to each other
 
@@ -100,6 +100,11 @@
 
 # Things done so far
 
-    - initial project directory created
+    initial project directory created
 
-    - dev_notes.md created
+    dev_notes.md created
+
+    Before deleting the Vite generated scaffolding, took a moment to fully examine each file and folder.
+    This was highly informative about how a Vue project's structure can be organized.  This time, rather than
+    erasing everything and  making everything from memory, it is helpful to see the structure already laid out
+    and to fill in with this particular app's contents next.
