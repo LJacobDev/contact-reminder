@@ -5,7 +5,10 @@
     to make a front end only / localstorage json database styled app about keeping
     in contact with people.
 
-    I think I'd like it to be like this:
+    It uses local storage so that it can be run off something like github pages
+    or locally without needing to contact a back end anywhere
+
+# Overview of design
 
     main page shows a set of 3 main buttons in a row at the top like a navbar
 
