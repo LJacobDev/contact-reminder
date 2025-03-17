@@ -81,6 +81,14 @@ to gain expertise sooner
 
 # Things to do next
 
+quickly put together an 'interaction' view which I can use to help me work out which fields I want it to have
+
+I feel like the /interaction route will want to have an interactionID as a get parameter that it uses to fetch a given interaction from localstorage or whatever data structure might be holding it in memory if any
+
+the interaction date and time should default to the date.now when it is created, but with the option for the user to change it
+
+I might sitll want a 'date created' separate field that isn't changeable so that there is some way to know when things were really entered, but I don't know how important that really is
+
 create useContacts.ts and useInteractions.ts composable, or possibly combine both into one file
 
     create contact and interaction types or interfaces
