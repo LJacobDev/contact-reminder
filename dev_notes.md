@@ -83,6 +83,8 @@ to gain expertise sooner
 
 quickly put together an 'interaction' view which I can use to help me work out which fields I want it to have
 
+.. fix the interaction-details input elements in the InteractionItem component to not overflow their flex container
+
 .. remove wherever the css styling is that made "Show Interactions" routerlink get green text
 
 I feel like the /interaction route will want to have an interactionID as a get parameter that it uses to fetch a given interaction from localstorage or whatever data structure might be holding it in memory if any
