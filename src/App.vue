@@ -25,7 +25,9 @@
 
   <!-- everything inside this inner div is the main app contents -->
   <header>
-    <h1>Contact Interaction Notes and Followup Reminders</h1>
+    <RouterLink to="/">
+      <h1>Contact Interaction Notes and Followup Reminders</h1>
+    </RouterLink>
     <nav>
       <div class="nav-button">Show Contacts</div>
       <RouterLink to="/interactions">
