@@ -83,6 +83,8 @@ to gain expertise sooner
 
 quickly put together an 'interaction' view which I can use to help me work out which fields I want it to have
 
+.. remove wherever the css styling is that made "Show Interactions" routerlink get green text
+
 I feel like the /interaction route will want to have an interactionID as a get parameter that it uses to fetch a given interaction from localstorage or whatever data structure might be holding it in memory if any
 
 the interaction date and time should default to the date.now when it is created, but with the option for the user to change it

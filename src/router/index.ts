@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import InteractionsView from '../views/InteractionsView.vue'
 import InteractionView from '../views/InteractionView.vue'
 
 const router = createRouter({
@@ -21,6 +22,7 @@ const router = createRouter({
     // },
 
     { path: '/', name: 'home', component: HomeView },
+    { path: '/interactions', name: 'interactions', component: InteractionsView },
     { path: '/interaction', name: 'interaction', component: InteractionView },
   ],
 })

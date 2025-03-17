@@ -28,7 +28,9 @@
     <h1>Contact Interaction Notes and Followup Reminders</h1>
     <nav>
       <div class="nav-button">Show Contacts</div>
-      <div class="nav-button">Show Interactions</div>
+      <RouterLink to="/interactions">
+        <div class="nav-button">Show Interactions</div>
+      </RouterLink>
     </nav>
   </header>
   <main class="router-view">
