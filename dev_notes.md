@@ -84,6 +84,7 @@ to gain expertise sooner
 quickly put together an 'interaction' view which I can use to help me work out which fields I want it to have
 
 .. fix the interaction-details input elements in the InteractionItem component to not overflow their flex container
+.. I just changed the router-view to have width:100% instead of width:80% and it essentially solved the issue but I still want to understand why there was an overflow back when width was at 80%
 
 .. remove wherever the css styling is that made "Show Interactions" routerlink get green text
 

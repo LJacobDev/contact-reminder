@@ -3,7 +3,7 @@ import InteractionItem from '@/components/InteractionItem.vue'
 </script>
 
 <template>
-  <div style="display: flex; justify-content: space-evenly">
+  <div class="interactions-header" style="display: flex; justify-content: space-evenly">
     <p>Interaction DateTime</p>
     <p>Interaction Summary</p>
     <p>FollowUp DateTime</p>
@@ -15,4 +15,9 @@ import InteractionItem from '@/components/InteractionItem.vue'
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.interactions-header p {
+  font-weight: 700;
+  margin: 4px 16px;
+}
+</style>

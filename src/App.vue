@@ -66,7 +66,7 @@ nav {
 .router-view {
   border: 1px black solid;
   margin: 20px auto;
-  width: 80%;
+  width: 100%;
   min-height: 300px;
 }
 
