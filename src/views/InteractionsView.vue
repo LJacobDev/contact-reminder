@@ -10,7 +10,7 @@ import InteractionItem from '@/components/InteractionItem.vue'
     <p>FollowUp Summary</p>
   </div>
 
-  <div v-for="i in 3" v-bind:key="i">
+  <div v-for="i in 3" :key="i">
     <InteractionItem />
   </div>
 </template>
