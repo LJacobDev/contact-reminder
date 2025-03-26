@@ -81,13 +81,16 @@ to gain expertise sooner
 
 # Things to do next
 
-## getting this app to have github actions CI CD to GitHub Pages hosting
+### getting this app to have github actions CI CD to GitHub Pages hosting
 ... github workflow file to build, test and eventually deploy to pages has been added, but it is not showing as running in the github actions tab
 
     ... find out if it is written or configured incorrectly
 
     ... make sure that this can use GH Actions to deploy this to Github Pages
 
+### adding an import/export feature so data can be transferred to other environments
+
+### completing views and data structures
 quickly put together an 'interaction' view which I can use to help me work out which fields I want it to have
 
 .. fix the interaction-details input elements in the InteractionItem component to not overflow their flex container
