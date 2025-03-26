@@ -81,6 +81,12 @@ to gain expertise sooner
 
 # Things to do next
 
+... attempted to add .github/workflows/ yaml files but the .github folder is appearing greyed out and not included in the repositoy when I run commits
+
+    ... so solve how to add the github actions workflows and make sure they're running correctly
+
+    ... make sure that this can use GH Actions to deploy this to Github Pages
+
 quickly put together an 'interaction' view which I can use to help me work out which fields I want it to have
 
 .. fix the interaction-details input elements in the InteractionItem component to not overflow their flex container
