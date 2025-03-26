@@ -85,6 +85,8 @@ to gain expertise sooner
 
     ... so solve how to add the github actions workflows and make sure they're running correctly
 
+    ... it was because the folder was accidentally created inside dist
+
     ... make sure that this can use GH Actions to deploy this to Github Pages
 
 quickly put together an 'interaction' view which I can use to help me work out which fields I want it to have
