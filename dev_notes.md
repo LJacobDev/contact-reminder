@@ -86,6 +86,7 @@ to gain expertise sooner
     ... so solve how to add the github actions workflows and make sure they're running correctly
 
     ... it was because the folder was accidentally created inside dist
+    ... making another change now to see if the workflow runs at all
 
     ... make sure that this can use GH Actions to deploy this to Github Pages
 
