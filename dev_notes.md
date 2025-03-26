@@ -81,12 +81,10 @@ to gain expertise sooner
 
 # Things to do next
 
-... attempted to add .github/workflows/ yaml files but the .github folder is appearing greyed out and not included in the repositoy when I run commits
+## getting this app to have github actions CI CD to GitHub Pages hosting
+... github workflow file to build, test and eventually deploy to pages has been added, but it is not showing as running in the github actions tab
 
-    ... so solve how to add the github actions workflows and make sure they're running correctly
-
-    ... it was because the folder was accidentally created inside dist
-    ... making another change now to see if the workflow runs at all
+    ... find out if it is written or configured incorrectly
 
     ... make sure that this can use GH Actions to deploy this to Github Pages
 
