@@ -114,6 +114,8 @@ to gain expertise sooner
 
         ... I added 'pages', then 'id-token', then 'contents' permissions one at a time until all the error messages cleared.  Now it gives an error message saying that it's expecting 'gh-pages' branch, so I'll make one of those
 
+        ... I've made a 'gh-pages' branch and pushed that like 'git push origin gh-pages' and it seems like something is working now, I'm going to try checking out main and making a minor change to see what workflow events happen
+
 ### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
