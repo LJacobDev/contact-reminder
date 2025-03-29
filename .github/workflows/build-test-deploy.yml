@@ -5,6 +5,9 @@ name: BuildTestDeploy
 on:
   push:
 
+permissions:
+  pages: write
+
 jobs:
   build-deploy:
     name: 'build-deploy'

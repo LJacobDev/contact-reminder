@@ -106,7 +106,13 @@ to gain expertise sooner
 
         ... much of this resource is talking about setting up vite.config.ts and the vue router, which I don't immediately see what that would have to do with github pages deployment, but I'll understand it all and tell what is relevant to pages deployment and what is just other stuff related to building in vite in general.  It might be saying that the vue-router needs to be configured in a certain way so that pages can navigate its page history or something like that
 
-        ... I want to add deployment to pages now, starting with what I think is the minimum code / instructions to do it, and seeing if that runs, and then adding in other parts that I thought might be unrelated next if I find out that they are in fact needed for this to work
+        ... I want to add deployment to pages now, starting with what I think is the minimum code / instructions to do it, and seeing if that runs, and then adding in other parts that I thought might be unrelated next if I find out that they are in fact needed for this to work.
+
+        ... so far I have only added the action in the yaml file for peaceiris/actions-gh-pages@v3 and generated an error message which says that "there is no such remove: 'origin'"
+
+        ... there is also an error message saying that there was no permission to push this, so this part is why permissions need to be given to 'github-actions'
+
+
 
 ### adding an import/export feature so data can be transferred to other environments
 
