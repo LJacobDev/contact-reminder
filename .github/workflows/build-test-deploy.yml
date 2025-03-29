@@ -4,6 +4,8 @@ name: BuildTestDeploy
 
 on:
   push:
+    branches:
+      - gh-pages
 
 permissions:
   contents: read

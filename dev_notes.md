@@ -116,6 +116,10 @@ to gain expertise sooner
 
         ... I've made a 'gh-pages' branch and pushed that like 'git push origin gh-pages' and it seems like something is working now, I'm going to try checking out main and making a minor change to see what workflow events happen
 
+        ... it seems like the time that I pushed 'git push origin gh-pages', it did some kind of successful deployment step, and the github.io site seems live.  I went to checkout main and ran a push on that, and in that it gave an error message about deploying to pages, where it said that it failed to get permissions to contact-reminder.git.  I think I'll need to set a separate deploy workflow file or job that only runs when gh-pages gets pushed to
+
+        ... I don't need it to run this build and test on pushes to main anyway, as those can be done locally.  I am going to switch the workflow to only work on pushes to gh-pages
+
 ### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
