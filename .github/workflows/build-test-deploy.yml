@@ -7,7 +7,7 @@ on:
 
 permissions:
   pages: write
-  id_token: write
+  id-token: write
 
 jobs:
   build-deploy:
