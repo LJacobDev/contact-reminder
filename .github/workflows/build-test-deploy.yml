@@ -6,6 +6,7 @@ on:
   push:
 
 permissions:
+  content: read
   pages: write
   id-token: write
 
