@@ -4,8 +4,6 @@ name: BuildTestDeploy
 
 on:
   push:
-    branches: 
-      -main
 
 jobs:
   build:
@@ -23,6 +21,4 @@ jobs:
 
     steps:
       - run: npm run test:unit
-
-
 # still needs the part where it deploys to github pages
