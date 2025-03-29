@@ -92,6 +92,10 @@ to gain expertise sooner
     ... I've looked on the github UI and it showed that the workflow attempted to run just now,
         and it showed an error message from line 20, col 5 where my runs-on property was accidentally nested inside something else rather than at top level, so it was parsed as missing from the file
 
+        ... correction, it was not that at all, and that runs-on was in fact in the right place.  It was really saying that runs-on was missing from the second job, 'test'.  I've added it, and now the workflow shows as running in the github ui
+
+        ... it shows that the build job is completing successfully, and that the test job is giving an error message, saying that it couldn't read package.json, that there was no such file or directory as "home/runner/work/contact-reminder/contact-reminder/package.json".  I can see what the error is saying but I don't immediately see what is causing the package.json to not be found.  It might have something to do with the test job needing a reference to what was built in the build job but I can figure that out next
+
 ### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
