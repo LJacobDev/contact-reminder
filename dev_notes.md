@@ -120,6 +120,8 @@ to gain expertise sooner
 
         ... I don't need it to run this build and test on pushes to main anyway, as those can be done locally.  I am going to switch the workflow to only work on pushes to gh-pages
 
+        ... now when I check out gh-pages it reverts to an older version, so I'll try things out until I understand how to push new changes to gh-pages.  I imagine that while checked out in main, I might use 'git push origin gh-pages'.. trying that now
+
 ### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
