@@ -112,7 +112,7 @@ to gain expertise sooner
 
         ... there is also an error message saying that there was no permission to push this, so this part is why permissions need to be given to 'github-actions'
 
-
+        ... I added 'pages', then 'id-token', then 'contents' permissions one at a time until all the error messages cleared.  Now it gives an error message saying that it's expecting 'gh-pages' branch, so I'll make one of those
 
 ### adding an import/export feature so data can be transferred to other environments
 
