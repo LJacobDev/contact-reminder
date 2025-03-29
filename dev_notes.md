@@ -124,7 +124,7 @@ and it showed an error message from line 20, col 5 where my runs-on property was
 
 ... something isn't working yet, as 'git push origin gh-pages' is saying 'everything up to date'. Also, the live github.io page is showing just a blank render which might update in a while, but it has been blank for several minutes already so for now it might indicate that things need further setup
 
-###### summary of this so far:
+#### summary of this so far:
 
 It seems like when I created a gh-pages branch and pushed it with 'git push origin gh-pages', it initiated a successful run of the workflow, showing a successful deployment. However the site appears blank even up until now (but doesn't show a 404)
 
