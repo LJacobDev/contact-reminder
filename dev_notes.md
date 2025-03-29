@@ -122,6 +122,16 @@ to gain expertise sooner
 
         ... now when I check out gh-pages it reverts to an older version, so I'll try things out until I understand how to push new changes to gh-pages.  I imagine that while checked out in main, I might use 'git push origin gh-pages'.. trying that now
 
+        ... something isn't working yet, as 'git push origin gh-pages' is saying 'everything up to date'.  Also, the live github.io page is showing just a blank render which might update in a while, but it has been blank for several minutes already so for now it might indicate that things need further setup
+
+        ... summary of this so far:
+
+            It seems like when I created a gh-pages branch and pushed it with 'git push origin gh-pages', it initiated a successful run of the workflow, showing a successful deployment.  However the site appears blank even up until now (but doesn't show a 404)
+
+            I still need to understand the relationships between parts here and how to make changes to main without initiating the CI CD, but then also send those changes likely to the gh-pages branch in order to initiate the CI CD workflow
+
+            there are several steps from the https://medium.com/@jagoda11/deploying-a-vue-3-app-with-vite-typescript-and-github-actions-to-github-pages-ac240cdb473e resource that I intentionally have omitted because I want to add one piece at a time and follow the error messages to find out which parts are essential to this process.  So far I've worked backwards with adding permissions, setting up gh-pages and root in the pages settings in github ui, and made modifications to the workflow yml to use the peaceiris action to deploy.  I have yet to do the other steps,  such as configuring package.json, or the vue router, or main.ts, or index.html, or vite.config.ts, or installing gh-pages in --save-dev, some of which might be needed in order to facilitate the process of getting changes sent to the gh-pages branch to make this all work
+
 ### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
