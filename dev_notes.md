@@ -96,6 +96,18 @@ to gain expertise sooner
 
         ... it shows that the build job is completing successfully, and that the test job is giving an error message, saying that it couldn't read package.json, that there was no such file or directory as "home/runner/work/contact-reminder/contact-reminder/package.json".  I can see what the error is saying but I don't immediately see what is causing the package.json to not be found.  It might have something to do with the test job needing a reference to what was built in the build job but I can figure that out next
 
+        ... I looked at other example of build and test workflow files and they seemed to just include the test command as a line directly after the build command.  I begin to imagine that the file missing error seen in the other version was related to the way that the 'setup node' action done in the build job was not still present for when the test job runs, and if so, then it needed to be either added to the test job, causing longer processing time, or just move the 'npm run test:unit' line to the build job to save time and accomplish it with that existing setup
+
+        ... now all the build and test steps work, and I want to add the deploy to pages step
+
+        ... I might want to make the pages deploy happen only on pushing or merging to another branch besides main, like a 'prod' branch, so I can still make frequent pushes to main without triggering that deployment over and over
+
+        ... rather than take guesses in the dark at how to set this up, I've found a resource that seems to explain a way to deploy vue3 to pages specifically: https://medium.com/@jagoda11/deploying-a-vue-3-app-with-vite-typescript-and-github-actions-to-github-pages-ac240cdb473e
+
+        ... much of this resource is talking about setting up vite.config.ts and the vue router, which I don't immediately see what that would have to do with github pages deployment, but I'll understand it all and tell what is relevant to pages deployment and what is just other stuff related to building in vite in general.  It might be saying that the vue-router needs to be configured in a certain way so that pages can navigate its page history or something like that
+
+        ... I want to add deployment to pages now, starting with what I think is the minimum code / instructions to do it, and seeing if that runs, and then adding in other parts that I thought might be unrelated next if I find out that they are in fact needed for this to work
+
 ### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
