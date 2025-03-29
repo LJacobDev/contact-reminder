@@ -108,7 +108,7 @@ and it showed an error message from line 20, col 5 where my runs-on property was
 
 ... I want to add deployment to pages now, starting with what I think is the minimum code / instructions to do it, and seeing if that runs, and then adding in other parts that I thought might be unrelated next if I find out that they are in fact needed for this to work.
 
-... so far I have only added the action in the yaml file for peaceiris/actions-gh-pages@v3 and generated an error message which says that "there is no such remove: 'origin'"
+... so far I have only added the action in the yaml file for peaceiris/actions-gh-pages@v3 and generated an error message which says that "there is no such remote: 'origin'"
 
 ... there is also an error message saying that there was no permission to push this, so this part is why permissions need to be given to 'github-actions'
 
