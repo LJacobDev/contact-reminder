@@ -144,6 +144,8 @@ there are several steps from the https://medium.com/@jagoda11/deploying-a-vue-3-
 
 ... what I'll try next is to make some configuration settings that were mentioned in the blog which I haven't done yet and see if any of those happen to clear this out...  it seems like there is another error message before this one about permissions, saying 'no such file or directory: /home/runner/work/contact-reminder/contact-reminder/dist/.*' so there is something wrong with a path it's expecting to find things in and that might get resolved by doing more of these configs
 
+... on the blog there is an instruction to make a gh-pages branch, and I saw that my repo no longer had one of those, so I wondered if that had to do with this at all.  I attempted doing the git rm -r . command it talks about but that wiped all the files in main even though I was checked out to gh-pages, so I did 'git reset --hard' to get them back, though this might had had side effects I have yet to find out about
+
 ### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
