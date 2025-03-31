@@ -28,11 +28,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-#  test:
-#    runs-on: ubuntu-latest
-#    needs: build
 
-#    steps:
-#      - run: npm run test:unit
-# still needs the part where it deploys to github pages
-# I feel like build and test might as well just both be one single job

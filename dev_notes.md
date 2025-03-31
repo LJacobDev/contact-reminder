@@ -138,6 +138,11 @@ there are several steps from the https://medium.com/@jagoda11/deploying-a-vue-3-
 
 ... I see what it is meant to do, but I don't see in this blog post where it is being invoked but I'll keep working through this
 
+... the current error given in the actions panel is about permission being denied to github-actions, so I tested whether adding the permissions in the settings > actions > general area helped with that, and it didn't seem to make a difference.
+
+... I do however see that in the 'deploy to github pages' action step, it is trying to do '/usr/bin/git push origin gh-pages' so I think I see the moment at which it tries to trigger the pages deploy that I was looking for previously
+
+... what I'll try next is to make some configuration settings that were mentioned in the blog which I haven't done yet and see if any of those happen to clear this out...  it seems like there is another error message before this one about permissions, saying 'no such file or directory: /home/runner/work/contact-reminder/contact-reminder/dist/.*' so there is something wrong with a path it's expecting to find things in and that might get resolved by doing more of these configs
 
 ### adding an import/export feature so data can be transferred to other environments
 
