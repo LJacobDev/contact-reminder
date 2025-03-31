@@ -2,12 +2,16 @@
 <html lang="">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
+    <!-- modified this line to have '/contact-reminder' added to the beginning of href while following github actions deployment blog guide-->
+    <link rel="icon" href="/contact-reminder/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <!-- added this line  while following github actions deployment blog guide-->
+    <base href="/contact-reminder/" />
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <!-- modified this line to have '/contact-reminder' added to the beginning of src while following github actions deployment blog guide-->
+    <script type="module" src="/contact-reminder/src/main.ts"></script>
   </body>
 </html>
