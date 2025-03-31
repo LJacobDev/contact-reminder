@@ -82,15 +82,60 @@ to gain expertise sooner
 # Things to do next
 
 ### getting this app to have github actions CI CD to GitHub Pages hosting
+
 ... github workflow file to build, test and eventually deploy to pages has been added, but it is not showing as running in the github actions tab
 
-    ... find out if it is written or configured incorrectly
+... find out if it is written or configured incorrectly
 
-    ... make sure that this can use GH Actions to deploy this to Github Pages
+... make sure that this can use GH Actions to deploy this to Github Pages
+
+... I've looked on the github UI and it showed that the workflow attempted to run just now,
+and it showed an error message from line 20, col 5 where my runs-on property was accidentally nested inside something else rather than at top level, so it was parsed as missing from the file
+
+... correction, it was not that at all, and that runs-on was in fact in the right place. It was really saying that runs-on was missing from the second job, 'test'. I've added it, and now the workflow shows as running in the github ui
+
+... it shows that the build job is completing successfully, and that the test job is giving an error message, saying that it couldn't read package.json, that there was no such file or directory as "home/runner/work/contact-reminder/contact-reminder/package.json". I can see what the error is saying but I don't immediately see what is causing the package.json to not be found. It might have something to do with the test job needing a reference to what was built in the build job but I can figure that out next
+
+... I looked at other example of build and test workflow files and they seemed to just include the test command as a line directly after the build command. I begin to imagine that the file missing error seen in the other version was related to the way that the 'setup node' action done in the build job was not still present for when the test job runs, and if so, then it needed to be either added to the test job, causing longer processing time, or just move the 'npm run test:unit' line to the build job to save time and accomplish it with that existing setup
+
+... now all the build and test steps work, and I want to add the deploy to pages step
+
+... I might want to make the pages deploy happen only on pushing or merging to another branch besides main, like a 'prod' branch, so I can still make frequent pushes to main without triggering that deployment over and over
+
+... rather than take guesses in the dark at how to set this up, I've found a resource that seems to explain a way to deploy vue3 to pages specifically: https://medium.com/@jagoda11/deploying-a-vue-3-app-with-vite-typescript-and-github-actions-to-github-pages-ac240cdb473e
+
+... much of this resource is talking about setting up vite.config.ts and the vue router, which I don't immediately see what that would have to do with github pages deployment, but I'll understand it all and tell what is relevant to pages deployment and what is just other stuff related to building in vite in general. It might be saying that the vue-router needs to be configured in a certain way so that pages can navigate its page history or something like that
+
+... I want to add deployment to pages now, starting with what I think is the minimum code / instructions to do it, and seeing if that runs, and then adding in other parts that I thought might be unrelated next if I find out that they are in fact needed for this to work.
+
+... so far I have only added the action in the yaml file for peaceiris/actions-gh-pages@v3 and generated an error message which says that "there is no such remote: 'origin'"
+
+... there is also an error message saying that there was no permission to push this, so this part is why permissions need to be given to 'github-actions'
+
+... I added 'pages', then 'id-token', then 'contents' permissions one at a time until all the error messages cleared. Now it gives an error message saying that it's expecting 'gh-pages' branch, so I'll make one of those
+
+... I've made a 'gh-pages' branch and pushed that like 'git push origin gh-pages' and it seems like something is working now, I'm going to try checking out main and making a minor change to see what workflow events happen
+
+... it seems like the time that I pushed 'git push origin gh-pages', it did some kind of successful deployment step, and the github.io site seems live. I went to checkout main and ran a push on that, and in that it gave an error message about deploying to pages, where it said that it failed to get permissions to contact-reminder.git. I think I'll need to set a separate deploy workflow file or job that only runs when gh-pages gets pushed to
+
+... I don't need it to run this build and test on pushes to main anyway, as those can be done locally. I am going to switch the workflow to only work on pushes to gh-pages
+
+... now when I check out gh-pages it reverts to an older version, so I'll try things out until I understand how to push new changes to gh-pages. I imagine that while checked out in main, I might use 'git push origin gh-pages'.. trying that now
+
+... something isn't working yet, as 'git push origin gh-pages' is saying 'everything up to date'. Also, the live github.io page is showing just a blank render which might update in a while, but it has been blank for several minutes already so for now it might indicate that things need further setup
+
+#### summary of this so far:
+
+It seems like when I created a gh-pages branch and pushed it with 'git push origin gh-pages', it initiated a successful run of the workflow, showing a successful deployment. However the site appears blank even up until now (but doesn't show a 404)
+
+I still need to understand the relationships between parts here and how to make changes to main without initiating the CI CD, but then also send those changes likely to the gh-pages branch in order to initiate the CI CD workflow
+
+there are several steps from the https://medium.com/@jagoda11/deploying-a-vue-3-app-with-vite-typescript-and-github-actions-to-github-pages-ac240cdb473e resource that I intentionally have omitted because I want to add one piece at a time and follow the error messages to find out which parts are essential to this process. So far I've worked backwards with adding permissions, setting up gh-pages and root in the pages settings in github ui, and made modifications to the workflow yml to use the peaceiris action to deploy. I have yet to do the other steps, such as configuring package.json, or the vue router, or main.ts, or index.html, or vite.config.ts, or installing gh-pages in --save-dev, some of which might be needed in order to facilitate the process of getting changes sent to the gh-pages branch to make this all work
 
 ### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
+
 quickly put together an 'interaction' view which I can use to help me work out which fields I want it to have
 
 .. fix the interaction-details input elements in the InteractionItem component to not overflow their flex container

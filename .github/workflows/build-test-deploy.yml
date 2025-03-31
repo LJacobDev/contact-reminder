@@ -4,12 +4,17 @@ name: BuildTestDeploy
 
 on:
   push:
-    branches: 
-      -main
+    branches:
+      - gh-pages
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build:
-    name: 'build'
+  build-deploy:
+    name: 'build-deploy'
     runs-on: ubuntu-latest
 
     steps:
@@ -17,12 +22,19 @@ jobs:
       - uses: actions/setup-node@v4
       - run: npm ci
       - run: npm run build --if-present
-
-  test:
-    needs: build
-
-    steps:
       - run: npm run test:unit
 
+      - name: 'Deploy to GitHub Pages'
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+#  test:
+#    runs-on: ubuntu-latest
+#    needs: build
 
+#    steps:
+#      - run: npm run test:unit
 # still needs the part where it deploys to github pages
+# I feel like build and test might as well just both be one single job
