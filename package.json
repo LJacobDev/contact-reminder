@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://LJacobDev.github.io/contact-reminder",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",

@@ -148,6 +148,10 @@ there are several steps from the https://medium.com/@jagoda11/deploying-a-vue-3-
 
 ... adding a gh-pages branch manually did not resolve the error messages but it seems to have slightly changed the output in the 'deploy to github pages' section. There is still a message saying that a path doesn't exist, so I'll keep doing the other steps as mentioned before to see if that resolves it along the way
 
+... added modifications to vite.config.js and index.html. Now the npm run build gives an error message that it can't resolve /contact-reminder/src/main.ts. I wonder what exactly is causing that but I know that it was also supposed to be modified, but I don't see how modifying it would help it get resolved
+
+... some additions of the project name to the paths in index.html resulted in them not being found, including favicon. So I reverted those back and it builds now. However, the 'base' element tag that was added into the head is being kept for now, though I wonder if it will also malfunction like these other parts had been doing
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
