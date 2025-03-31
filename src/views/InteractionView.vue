@@ -40,4 +40,9 @@ textarea {
   max-width: 100%;
   min-height: 100px;
 }
+
+button {
+  font-size: 1rem;
+  padding: 8px 16px;
+}
 </style>

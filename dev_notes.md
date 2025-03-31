@@ -195,3 +195,6 @@ go look at https://test-utils.vuejs.org/guide/ Vue Test Utils to see more about 
     Make initial placeholder type main view component
 
     add enough styling to make it functional and roughly placed in 'nice enough to develop with' looking layout
+
+
+    learned about github pages, github actions for a CI CD pipeline.  Have created the workflows folder by hand as practice vs just using the github UI to do it, but it isn't running properly yet
