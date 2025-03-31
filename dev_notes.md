@@ -142,14 +142,17 @@ there are several steps from the https://medium.com/@jagoda11/deploying-a-vue-3-
 
 ... I do however see that in the 'deploy to github pages' action step, it is trying to do '/usr/bin/git push origin gh-pages' so I think I see the moment at which it tries to trigger the pages deploy that I was looking for previously
 
-... what I'll try next is to make some configuration settings that were mentioned in the blog which I haven't done yet and see if any of those happen to clear this out...  it seems like there is another error message before this one about permissions, saying 'no such file or directory: /home/runner/work/contact-reminder/contact-reminder/dist/.*' so there is something wrong with a path it's expecting to find things in and that might get resolved by doing more of these configs
+... what I'll try next is to make some configuration settings that were mentioned in the blog which I haven't done yet and see if any of those happen to clear this out... it seems like there is another error message before this one about permissions, saying 'no such file or directory: /home/runner/work/contact-reminder/contact-reminder/dist/.\*' so there is something wrong with a path it's expecting to find things in and that might get resolved by doing more of these configs
 
-... on the blog there is an instruction to make a gh-pages branch, and I saw that my repo no longer had one of those, so I wondered if that had to do with this at all.  I attempted doing the git rm -r . command it talks about but that wiped all the files in main even though I was checked out to gh-pages, so I did 'git reset --hard' to get them back, though this might had had side effects I have yet to find out about
+... on the blog there is an instruction to make a gh-pages branch, and I saw that my repo no longer had one of those, so I wondered if that had to do with this at all. I attempted doing the git rm -r . command it talks about but that wiped all the files in main even though I was checked out to gh-pages, so I did 'git reset --hard' to get them back, though this might had had side effects I have yet to find out about
 
-... adding a gh-pages branch manually did not resolve the error messages but it seems to have slightly changed the output in the 'deploy to github pages' section.  There is still a message saying that a path doesn't exist, so I'll keep doing the other steps as mentioned before to see if that resolves it along the way
+... adding a gh-pages branch manually did not resolve the error messages but it seems to have slightly changed the output in the 'deploy to github pages' section. There is still a message saying that a path doesn't exist, so I'll keep doing the other steps as mentioned before to see if that resolves it along the way
 
+### creating more test files
 
+I want there to be tests on the Vue components in `src/components/__tests__`
 
+I also want there to be tests for other files with typescript logic in them
 
 ### adding an import/export feature so data can be transferred to other environments
 
