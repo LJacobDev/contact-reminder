@@ -136,6 +136,8 @@ there are several steps from the https://medium.com/@jagoda11/deploying-a-vue-3-
 
 ... taking a moment to read what gh-pages package is meant to do
 
+... I see what it is meant to do, but I don't see in this blog post where it is being invoked but I'll keep working through this
+
 ### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
