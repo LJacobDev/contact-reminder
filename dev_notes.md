@@ -289,3 +289,21 @@ I've followed a blog guide about how to set up a CICD pipeline for github action
 it appears that the router double definition was not what I first though it was. It was because main.ts had imported 'createRouter' and 'router', where the blog guide did not have 'import router'. So by removing 'import router', it has no build errors.
 
 Now that the blog has essentially been fully followed, there still remains an error in the deploy step on the action workflow
+
+I tried doing manually what seemed to work before, which was:
+
+- delete gh-pages branch
+- create the gh-pages branch
+- from it, run 'git push origin gh-pages'
+
+Doing this caused what looks like a successful run of the gh actions workflow with no error messages.
+
+I wonder if the actual page will still appear blank or whether it will work this time
+
+two things remain not understood:
+
+why does following the blog seem to result in getting error messages?
+
+- find out more about what all of these parts actually do and why they need to be set to what they're set to, so you know exactly what to do to use this correctly
+
+- check whether the render is still blank and if so find out why
