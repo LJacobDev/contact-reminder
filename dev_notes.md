@@ -83,7 +83,7 @@ to gain expertise sooner
 
 ### finish off getting the CI CD pipeline to deploy to pages
 
-... this process was started but there were some obstacles to its completion, [see notes of things already done so far on this one](# summary-of-this-and-how-to-continue)
+... this process was started but there were some obstacles to its completion, [see notes of things already done so far on this one](#summary-of-this-and-how-to-continue)
 
 ### creating more test files
 
