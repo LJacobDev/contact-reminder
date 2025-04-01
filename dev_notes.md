@@ -121,6 +121,8 @@ or I can push from main and get a permission error
 
 I tried making a gh-pages branch, but being checked out in main when then pushing to 'origin gh-pages' and the 'pages to pages' error message appeared again here
 
+... the pages to pages error disappears when I have a gh-pages branch that exists, but when I use main to push to origin main, but now I see the permissions error again. Currently, permissions are meant to be set up to allow this to work, but it seems to be the only remaining thing to wonder about looking at for the moment
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
