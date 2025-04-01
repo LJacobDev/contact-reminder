@@ -89,6 +89,8 @@ for now I want to at least continue developing the app while coming back to unde
 
 here is a second guide about this topic that I can review in order to see what parts it has in common with the first guide and what is different about it: https://medium.com/@pathirage/step-in-to-ci-cd-a-hands-on-guide-to-building-ci-cd-pipeline-with-github-actions-7490d6f7d8ff
 
+... I've removed the seemingly unrelated modifications introduced by the first blog guide to index.html, main.ts, vite.config.ts, index.ts, and deleted gh-pages branch
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
