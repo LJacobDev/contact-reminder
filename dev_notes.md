@@ -287,3 +287,5 @@ I've followed a blog guide about how to set up a CICD pipeline for github action
 #### correction:
 
 it appears that the router double definition was not what I first though it was. It was because main.ts had imported 'createRouter' and 'router', where the blog guide did not have 'import router'. So by removing 'import router', it has no build errors.
+
+Now that the blog has essentially been fully followed, there still remains an error in the deploy step on the action workflow
