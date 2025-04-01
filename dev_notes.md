@@ -97,6 +97,10 @@ here is a second guide about this topic that I can review in order to see what p
 
 ... all that remains now is that there is still an issue of permission lacking when trying to push the commit to 'git push origin gh-pages' in the deploy job
 
+... I tried again making gh-pages branch and pushing it in the way that made it appear to finish deployment. I noticed that my build job was skipping because I had a conditional in it looking for the branch to be main
+
+... I noticed something else, where another 'pages build and deployment' workflow runs only while in this gh-pages branch doing that manual push - it says it is building with jekyll and then successfully deploying. I almost think that this is then building the vue app and making it appear blank. I wonder if I add html to index.html it will appear on the pages render
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
