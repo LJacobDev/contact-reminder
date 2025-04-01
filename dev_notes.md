@@ -123,6 +123,14 @@ I tried making a gh-pages branch, but being checked out in main when then pushin
 
 ... the pages to pages error disappears when I have a gh-pages branch that exists, but when I use main to push to origin main, but now I see the permissions error again. Currently, permissions are meant to be set up to allow this to work, but it seems to be the only remaining thing to wonder about looking at for the moment
 
+... I confirmed that my permissions needed 'contents' to be set to 'write', and upon doing this, the behaviour changed:
+
+now the 'debugging pages issues' completes all steps with no errors, no permission problems
+
+it still does 'pages build and deployment' which I'm not trying to run
+
+now instead of the jekyll build with 'test text', it shows a 404 which is a new issue
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
