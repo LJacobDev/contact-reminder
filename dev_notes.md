@@ -101,6 +101,18 @@ here is a second guide about this topic that I can review in order to see what p
 
 ... I noticed something else, where another 'pages build and deployment' workflow runs only while in this gh-pages branch doing that manual push - it says it is building with jekyll and then successfully deploying. I almost think that this is then building the vue app and making it appear blank. I wonder if I add html to index.html it will appear on the pages render
 
+!!! The 'test text' did appear, so this hypothesis seems to be correct, that my deploy step is not working because it's deploying a jekyll build instead of the dist folder I'm meaning for it to
+
+NEXT: I would like to find out why this separate build workflow that uses jekyll is happening and why my deliberate artifact folder of dist that is being uploaded and downloaded is not being used as intended
+
+One thing to note: I got this error message
+
+Action failed with "You deploy from gh-pages to gh-pages
+This operation is prohibited to protect your contents
+"
+
+this seems to mean that my method of manually pushing from gh-pages branch is causing a problem here
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
