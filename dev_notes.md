@@ -113,6 +113,12 @@ This operation is prohibited to protect your contents
 
 this seems to mean that my method of manually pushing from gh-pages branch is causing a problem here
 
+I've deleted gh-pages branch and pushed to main again, expecting permissions error to come back up again (it does do that)
+
+So I can push from gh-pages branch in the cli and get it to deploy as a jekyll build in an unexpected separate workflow/action being run, but when doing that it ignores my vite build and has an issue with pushing from gh-pages branch to itself
+
+or I can push from main and get a permission error
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
