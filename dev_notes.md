@@ -131,6 +131,10 @@ it still does 'pages build and deployment' which I'm not trying to run
 
 now instead of the jekyll build with 'test text', it shows a 404 which is a new issue
 
+I've been able to add to my workflow yml a line that creates a ./dist/.nojekyll file and it has stopped the additional workflow from running, but now I still have a 404 on pages
+
+I asked github copilot to speculate why this 404 could be here and it suggested that vite.config.ts would need a 'base' option specified
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
