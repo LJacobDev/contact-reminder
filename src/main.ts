@@ -6,7 +6,7 @@ import InteractionView from './views/InteractionView.vue'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+// import router from './router'
 
 //Begin section of lines added to follow github actions guide, even though routes are crated in router/index.ts
 import type { RouteRecordRaw } from 'vue-router'

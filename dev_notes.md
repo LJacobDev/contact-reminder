@@ -283,3 +283,7 @@ What it has done though was get me much closer to understanding how to get the d
 #### summary of this and how to continue:
 
 I've followed a blog guide about how to set up a CICD pipeline for github actions to github pages, but it only caused me to understand more about how to get it working, but it appears to introduce build errors to just take the guide at face value. It will need to become understood so that I can set it up knowing exactly what to do and why. For now, build and test is working, and it is only the Pages deploy step that needs to be completed.
+
+#### correction:
+
+it appears that the router double definition was not what I first though it was. It was because main.ts had imported 'createRouter' and 'router', where the blog guide did not have 'import router'. So by removing 'import router', it has no build errors.
