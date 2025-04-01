@@ -85,6 +85,8 @@ to gain expertise sooner
 
 ... this process was started but there were some obstacles to its completion, [see notes of things already done so far on this one](#summary-of-this-and-how-to-continue)
 
+for now I want to at least continue developing the app while coming back to understanding how to get it to finish the CD part of its CI/CD pipeline
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
