@@ -91,6 +91,12 @@ here is a second guide about this topic that I can review in order to see what p
 
 ... I've removed the seemingly unrelated modifications introduced by the first blog guide to index.html, main.ts, vite.config.ts, index.ts, and deleted gh-pages branch
 
+... doing iterative debugging of the error messages in github actions logs, talking about missing a file or directory of ...contact-reminder/contact-reminder/dist. Using error messages to play around with path details to see what happens
+
+... found that switching to use newer upload-artifact and download-artifact seemed to remove the problem of paths missing, now that part of things looks free of error messages
+
+... all that remains now is that there is still an issue of permission lacking when trying to push the commit to 'git push origin gh-pages' in the deploy job
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
