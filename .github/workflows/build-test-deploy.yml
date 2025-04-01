@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v4.6.2
         with:
           name: production file
-          path: ./contact-reminder/dist
+          path: ./dist
 
   deploy:
     needs: build
@@ -38,7 +38,7 @@ jobs:
         uses: actions/download-artifact@v4.2.1
         with:
           name: production file
-          path: ./contact-reminder/dist
+          path: ./dist
 
       - name: 'Deploy to GitHub Pages'
         if: github.ref == 'refs/heads/main'
