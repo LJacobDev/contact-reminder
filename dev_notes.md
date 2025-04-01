@@ -119,6 +119,8 @@ So I can push from gh-pages branch in the cli and get it to deploy as a jekyll b
 
 or I can push from main and get a permission error
 
+I tried making a gh-pages branch, but being checked out in main when then pushing to 'origin gh-pages' and the 'pages to pages' error message appeared again here
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
