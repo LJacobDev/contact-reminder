@@ -81,60 +81,6 @@ to gain expertise sooner
 
 # Things to do next
 
-### finish off getting the CI CD pipeline to deploy to pages
-
-... this process was started but there were some obstacles to its completion, [see notes of things already done so far on this one](#summary-of-this-and-how-to-continue)
-
-for now I want to at least continue developing the app while coming back to understanding how to get it to finish the CD part of its CI/CD pipeline
-
-here is a second guide about this topic that I can review in order to see what parts it has in common with the first guide and what is different about it: https://medium.com/@pathirage/step-in-to-ci-cd-a-hands-on-guide-to-building-ci-cd-pipeline-with-github-actions-7490d6f7d8ff
-
-... I've removed the seemingly unrelated modifications introduced by the first blog guide to index.html, main.ts, vite.config.ts, index.ts, and deleted gh-pages branch
-
-... doing iterative debugging of the error messages in github actions logs, talking about missing a file or directory of ...contact-reminder/contact-reminder/dist. Using error messages to play around with path details to see what happens
-
-... found that switching to use newer upload-artifact and download-artifact seemed to remove the problem of paths missing, now that part of things looks free of error messages
-
-... all that remains now is that there is still an issue of permission lacking when trying to push the commit to 'git push origin gh-pages' in the deploy job
-
-... I tried again making gh-pages branch and pushing it in the way that made it appear to finish deployment. I noticed that my build job was skipping because I had a conditional in it looking for the branch to be main
-
-... I noticed something else, where another 'pages build and deployment' workflow runs only while in this gh-pages branch doing that manual push - it says it is building with jekyll and then successfully deploying. I almost think that this is then building the vue app and making it appear blank. I wonder if I add html to index.html it will appear on the pages render
-
-!!! The 'test text' did appear, so this hypothesis seems to be correct, that my deploy step is not working because it's deploying a jekyll build instead of the dist folder I'm meaning for it to
-
-NEXT: I would like to find out why this separate build workflow that uses jekyll is happening and why my deliberate artifact folder of dist that is being uploaded and downloaded is not being used as intended
-
-One thing to note: I got this error message
-
-Action failed with "You deploy from gh-pages to gh-pages
-This operation is prohibited to protect your contents
-"
-
-this seems to mean that my method of manually pushing from gh-pages branch is causing a problem here
-
-I've deleted gh-pages branch and pushed to main again, expecting permissions error to come back up again (it does do that)
-
-So I can push from gh-pages branch in the cli and get it to deploy as a jekyll build in an unexpected separate workflow/action being run, but when doing that it ignores my vite build and has an issue with pushing from gh-pages branch to itself
-
-or I can push from main and get a permission error
-
-I tried making a gh-pages branch, but being checked out in main when then pushing to 'origin gh-pages' and the 'pages to pages' error message appeared again here
-
-... the pages to pages error disappears when I have a gh-pages branch that exists, but when I use main to push to origin main, but now I see the permissions error again. Currently, permissions are meant to be set up to allow this to work, but it seems to be the only remaining thing to wonder about looking at for the moment
-
-... I confirmed that my permissions needed 'contents' to be set to 'write', and upon doing this, the behaviour changed:
-
-now the 'debugging pages issues' completes all steps with no errors, no permission problems
-
-it still does 'pages build and deployment' which I'm not trying to run
-
-now instead of the jekyll build with 'test text', it shows a 404 which is a new issue
-
-I've been able to add to my workflow yml a line that creates a ./dist/.nojekyll file and it has stopped the additional workflow from running, but now I still have a 404 on pages
-
-I asked github copilot to speculate why this 404 could be here and it suggested that vite.config.ts would need a 'base' option specified
-
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
@@ -357,3 +303,63 @@ why does following the blog seem to result in getting error messages?
 - find out more about what all of these parts actually do and why they need to be set to what they're set to, so you know exactly what to do to use this correctly
 
 - check whether the render is still blank and if so find out why
+
+### finish off getting the CI CD pipeline to deploy to pages
+
+... this process was started but there were some obstacles to its completion, [see notes of things already done so far on this one](#summary-of-this-and-how-to-continue)
+
+for now I want to at least continue developing the app while coming back to understanding how to get it to finish the CD part of its CI/CD pipeline
+
+here is a second guide about this topic that I can review in order to see what parts it has in common with the first guide and what is different about it: https://medium.com/@pathirage/step-in-to-ci-cd-a-hands-on-guide-to-building-ci-cd-pipeline-with-github-actions-7490d6f7d8ff
+
+... I've removed the seemingly unrelated modifications introduced by the first blog guide to index.html, main.ts, vite.config.ts, index.ts, and deleted gh-pages branch
+
+... doing iterative debugging of the error messages in github actions logs, talking about missing a file or directory of ...contact-reminder/contact-reminder/dist. Using error messages to play around with path details to see what happens
+
+... found that switching to use newer upload-artifact and download-artifact seemed to remove the problem of paths missing, now that part of things looks free of error messages
+
+... all that remains now is that there is still an issue of permission lacking when trying to push the commit to 'git push origin gh-pages' in the deploy job
+
+... I tried again making gh-pages branch and pushing it in the way that made it appear to finish deployment. I noticed that my build job was skipping because I had a conditional in it looking for the branch to be main
+
+... I noticed something else, where another 'pages build and deployment' workflow runs only while in this gh-pages branch doing that manual push - it says it is building with jekyll and then successfully deploying. I almost think that this is then building the vue app and making it appear blank. I wonder if I add html to index.html it will appear on the pages render
+
+!!! The 'test text' did appear, so this hypothesis seems to be correct, that my deploy step is not working because it's deploying a jekyll build instead of the dist folder I'm meaning for it to
+
+NEXT: I would like to find out why this separate build workflow that uses jekyll is happening and why my deliberate artifact folder of dist that is being uploaded and downloaded is not being used as intended
+
+One thing to note: I got this error message
+
+Action failed with "You deploy from gh-pages to gh-pages
+This operation is prohibited to protect your contents
+"
+
+this seems to mean that my method of manually pushing from gh-pages branch is causing a problem here
+
+I've deleted gh-pages branch and pushed to main again, expecting permissions error to come back up again (it does do that)
+
+So I can push from gh-pages branch in the cli and get it to deploy as a jekyll build in an unexpected separate workflow/action being run, but when doing that it ignores my vite build and has an issue with pushing from gh-pages branch to itself
+
+or I can push from main and get a permission error
+
+I tried making a gh-pages branch, but being checked out in main when then pushing to 'origin gh-pages' and the 'pages to pages' error message appeared again here
+
+... the pages to pages error disappears when I have a gh-pages branch that exists, but when I use main to push to origin main, but now I see the permissions error again. Currently, permissions are meant to be set up to allow this to work, but it seems to be the only remaining thing to wonder about looking at for the moment
+
+... I confirmed that my permissions needed 'contents' to be set to 'write', and upon doing this, the behaviour changed:
+
+now the 'debugging pages issues' completes all steps with no errors, no permission problems
+
+it still does 'pages build and deployment' which I'm not trying to run
+
+now instead of the jekyll build with 'test text', it shows a 404 which is a new issue
+
+I've been able to add to my workflow yml a line that creates a ./dist/.nojekyll file and it has stopped the additional workflow from running, but now I still have a 404 on pages
+
+I asked github copilot to speculate why this 404 could be here and it suggested that vite.config.ts would need a 'base' option specified
+
+... I was able to do step by step troubleshooting with github copilot, including observing the gh-pages branch in the github UI and seeing that it had nothing but the .nojekyll file in it and was missing the built assets and index.html
+
+... from there I was able to determine that my workflow yaml file was specifying the wrong path for the publish_dir, as I had it on ./contact-reminder/dist and it needed to be .dist
+
+##### Once these changes were made, the vite built version of the app began to correctly appear on the github pages url, so I now have a completed CI/CD pipeline for build, test, deploy to pages
