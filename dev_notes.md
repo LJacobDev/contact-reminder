@@ -81,6 +81,8 @@ to gain expertise sooner
 
 # Things to do next
 
+Build app functionality and eventually better UI appearance now that CI/CD pipeline is in place
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
