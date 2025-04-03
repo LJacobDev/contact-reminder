@@ -93,6 +93,8 @@ I also want there to be tests for other files with typescript logic in them
 
 ### completing views and data structures
 
+The interactions and contacts will probably be held in a Pinia store just so that the state can be in one location in case I want to access it from several components
+
 quickly put together an 'interaction' view which I can use to help me work out which fields I want it to have
 
 .. fix the interaction-details input elements in the InteractionItem component to not overflow their flex container
