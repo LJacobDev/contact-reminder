@@ -83,13 +83,9 @@ to gain expertise sooner
 
 Build app functionality and eventually better UI appearance now that CI/CD pipeline is in place
 
-### debug a build issue in the CI/CD pipeline
+### make the navbar buttons actual buttons instead of divs so they don't have text selection
 
-I took the latest commits and pushed this to repo, and the npm run build failed on that, whereas it doesn't in the local folder
-
-it's saying that the re is no /home/runner/work/contact-reminder/contact-reminder/src/store folder
-
-... it seems like the src/store folder and types.d.ts weren't added in git even though git commit -am was used, so using 'git add .' to get them in there
+divs work like nav buttons but makes the text selectable. I could either see if disabling text selection is possible or switch to buttons
 
 ### expand on the pinia store functionality
 
@@ -391,3 +387,13 @@ quickly putting in a simple starting point for the pinia store and it will be wo
 now there is an 'add contact' and 'add interaction' set of nav buttons that when clicked will increment the store's highest contact ID and highest interaction ID, which are currently being shown on the homeview screen to show that they are in fact incrementing and being reactively rendered successfully just to test that they're set up right
 
 next I can fill out more store functionality for saving and loading, and then work out more about the contact and interaction data structures and views of how to show and edit them
+
+### debug a build issue in the CI/CD pipeline
+
+I took the latest commits and pushed this to repo, and the npm run build failed on that, whereas it doesn't in the local folder
+
+it's saying that the re is no /home/runner/work/contact-reminder/contact-reminder/src/store folder
+
+... it seems like the src/store folder and types.d.ts weren't added in git even though git commit -am was used, so using 'git add .' to get them in there
+
+page deploys by CI/CD successfully

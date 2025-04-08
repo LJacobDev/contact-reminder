@@ -31,11 +31,11 @@ const store = useStore()
       <h1>Contact Interaction Notes and Followup Reminders</h1>
     </RouterLink>
     <nav>
-      <div class="nav-button">Show Contacts</div>
-      <div class="nav-button" @click="store.addContact">Add Contact</div>
-      <div class="nav-button" @click="store.addInteraction">Add Interaction</div>
+      <button class="nav-button">Show Contacts</button>
+      <button class="nav-button" @click="store.addContact">Add Contact</button>
+      <button class="nav-button" @click="store.addInteraction">Add Interaction</button>
       <RouterLink to="/interactions">
-        <div class="nav-button">Show Interactions</div>
+        <button class="nav-button">Show Interactions</button>
       </RouterLink>
     </nav>
   </header>
