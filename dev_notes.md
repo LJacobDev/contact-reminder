@@ -405,7 +405,6 @@ divs work like nav buttons but makes the text selectable. I could either see if 
 I've changed them to buttons and their styling has changed (not important now) and the text selection has gone away so I like this better this way for working with in development
 
 <details>
-
   <summary>Click here<summary>
 
 details
