@@ -83,6 +83,8 @@ to gain expertise sooner
 
 Build app functionality and eventually better UI appearance now that CI/CD pipeline is in place
 
+### move the contents of App.vue to a better organized layout file
+
 ### expand on the pinia store functionality
 
 next I can fill out more store functionality for saving and loading, importing, exporting, and clearing, and then work out more about the contact and interaction data structures and views of how to show and edit them
@@ -403,10 +405,3 @@ the local server was not able to find built asset files because it was looking f
 divs work like nav buttons but makes the text selectable. I could either see if disabling text selection is possible or switch to buttons
 
 I've changed them to buttons and their styling has changed (not important now) and the text selection has gone away so I like this better this way for working with in development
-
-<details>
-  <summary>Click here<summary>
-
-details
-
-</details>

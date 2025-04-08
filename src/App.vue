@@ -31,12 +31,19 @@ const store = useStore()
       <h1>Contact Interaction Notes and Followup Reminders</h1>
     </RouterLink>
     <nav>
-      <button class="nav-button">Show Contacts</button>
-      <button class="nav-button" @click="store.addContact">Add Contact</button>
-      <button class="nav-button" @click="store.addInteraction">Add Interaction</button>
-      <RouterLink to="/interactions">
-        <button class="nav-button">Show Interactions</button>
-      </RouterLink>
+      <div>
+        <button class="nav-button">Show Contacts</button>
+        <button class="nav-button" @click="store.addContact">Add Contact</button>
+        <button class="nav-button" @click="store.addInteraction">Add Interaction</button>
+        <RouterLink to="/interactions">
+          <button class="nav-button">Show Interactions</button>
+        </RouterLink>
+      </div>
+      <div>
+        <button class="nav-button" @click="store.importData">Import Data</button>
+        <button class="nav-button" @click="store.exportData">Export Data</button>
+        <button class="nav-button" @click="store.clearData">Clear Data</button>
+      </div>
     </nav>
   </header>
   <main class="router-view">
@@ -51,10 +58,13 @@ h1 {
   margin-bottom: 20px;
 }
 
-nav {
+nav div {
   /* border: 1px black solid; */
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  align-items: center; /* this line exists for now because it keeps the buttons the same height whether wrapped in RouterLink or not*/
+  justify-content: center;
+  gap: 10px;
   width: 60%;
   margin: 16px auto;
 }
