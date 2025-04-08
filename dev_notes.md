@@ -83,10 +83,6 @@ to gain expertise sooner
 
 Build app functionality and eventually better UI appearance now that CI/CD pipeline is in place
 
-### make the navbar buttons actual buttons instead of divs so they don't have text selection
-
-divs work like nav buttons but makes the text selectable. I could either see if disabling text selection is possible or switch to buttons
-
 ### expand on the pinia store functionality
 
 next I can fill out more store functionality for saving and loading, importing, exporting, and clearing, and then work out more about the contact and interaction data structures and views of how to show and edit them
@@ -401,3 +397,19 @@ page deploys by CI/CD successfully
 ### noticed issue with running local non-dev server
 
 the local server was not able to find built asset files because it was looking for a different 'base' folder than just dist. If I removed the base option from vite.config.js it fixed that issue but broke github pages hosting. So I put the base option back since GH Pages needs it that way, but it makes me want to think about what I can do to get the local running server to work right with that somehow too
+
+### make the navbar buttons actual buttons instead of divs so they don't have text selection
+
+divs work like nav buttons but makes the text selectable. I could either see if disabling text selection is possible or switch to buttons
+
+I've changed them to buttons and their styling has changed (not important now) and the text selection has gone away so I like this better this way for working with in development
+
+<details>
+
+  <summary>
+  Click here
+  <summary>
+
+details
+
+</details>
