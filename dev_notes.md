@@ -397,3 +397,7 @@ it's saying that the re is no /home/runner/work/contact-reminder/contact-reminde
 ... it seems like the src/store folder and types.d.ts weren't added in git even though git commit -am was used, so using 'git add .' to get them in there
 
 page deploys by CI/CD successfully
+
+### noticed issue with running local non-dev server
+
+the local server was not able to find built asset files because it was looking for a different 'base' folder than just dist. If I removed the base option from vite.config.js it fixed that issue but broke github pages hosting. So I put the base option back since GH Pages needs it that way, but it makes me want to think about what I can do to get the local running server to work right with that somehow too
