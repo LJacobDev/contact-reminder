@@ -83,6 +83,14 @@ to gain expertise sooner
 
 Build app functionality and eventually better UI appearance now that CI/CD pipeline is in place
 
+### debug a build issue in the CI/CD pipeline
+
+I took the latest commits and pushed this to repo, and the npm run build failed on that, whereas it doesn't in the local folder
+
+it's saying that the re is no /home/runner/work/contact-reminder/contact-reminder/src/store folder
+
+... it seems like the src/store folder and types.d.ts weren't added in git even though git commit -am was used, so using 'git add .' to get them in there
+
 ### expand on the pinia store functionality
 
 next I can fill out more store functionality for saving and loading, importing, exporting, and clearing, and then work out more about the contact and interaction data structures and views of how to show and edit them
