@@ -83,6 +83,10 @@ to gain expertise sooner
 
 Build app functionality and eventually better UI appearance now that CI/CD pipeline is in place
 
+### adding a pinia store to hold 'contacts' and 'interactions' values, and giving it functionality to 'add contact' 'add interation' etc
+
+quickly putting in a simple starting point for the pinia store and it will be worked out probably alongside the data structure details
+
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
