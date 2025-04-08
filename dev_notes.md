@@ -406,9 +406,7 @@ I've changed them to buttons and their styling has changed (not important now) a
 
 <details>
 
-  <summary>
-  Click here
-  <summary>
+  <summary>Click here<summary>
 
 details
 
