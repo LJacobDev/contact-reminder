@@ -83,9 +83,13 @@ to gain expertise sooner
 
 Build app functionality and eventually better UI appearance now that CI/CD pipeline is in place
 
-### adding a pinia store to hold 'contacts' and 'interactions' values, and giving it functionality to 'add contact' 'add interation' etc
+### expand on the pinia store functionality
 
-quickly putting in a simple starting point for the pinia store and it will be worked out probably alongside the data structure details
+next I can fill out more store functionality for saving and loading, importing, exporting, and clearing, and then work out more about the contact and interaction data structures and views of how to show and edit them
+
+decide whether to autosave every action or give a save/cancel confirmation opportunity, as well as probably giving it a save/cancel decision,
+
+BUT ALSO a temp autosave so that if the browser crashes they should have the last known unsaved edits able to be retrieved from localstorage
 
 ### creating more test files
 
@@ -371,3 +375,11 @@ I asked github copilot to speculate why this 404 could be here and it suggested 
 ... from there I was able to determine that my workflow yaml file was specifying the wrong path for the publish_dir, as I had it on ./contact-reminder/dist and it needed to be .dist
 
 ##### Once these changes were made, the vite built version of the app began to correctly appear on the github pages url, so I now have a completed CI/CD pipeline for build, test, deploy to pages
+
+### adding a pinia store to hold 'contacts' and 'interactions' values, and giving it functionality to 'add contact' 'add interation' etc
+
+quickly putting in a simple starting point for the pinia store and it will be worked out probably alongside the data structure details
+
+now there is an 'add contact' and 'add interaction' set of nav buttons that when clicked will increment the store's highest contact ID and highest interaction ID, which are currently being shown on the homeview screen to show that they are in fact incrementing and being reactively rendered successfully just to test that they're set up right
+
+next I can fill out more store functionality for saving and loading, and then work out more about the contact and interaction data structures and views of how to show and edit them

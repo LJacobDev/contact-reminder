@@ -3,6 +3,8 @@
 // import { RouterLink, RouterView } from 'vue-router'
 
 // import HelloWorld from './components/HelloWorld.vue'
+import { useStore } from '@/store'
+const store = useStore()
 </script>
 
 <template>
@@ -30,6 +32,8 @@
     </RouterLink>
     <nav>
       <div class="nav-button">Show Contacts</div>
+      <div class="nav-button" @click="store.addContact">Add Contact</div>
+      <div class="nav-button" @click="store.addInteraction">Add Interaction</div>
       <RouterLink to="/interactions">
         <div class="nav-button">Show Interactions</div>
       </RouterLink>
