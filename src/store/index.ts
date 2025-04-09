@@ -4,10 +4,17 @@
 
 import { defineStore } from 'pinia'
 import { ref, reactive } from 'vue'
+import { useRouter } from 'vue-router'
 import type { Ref } from 'vue'
 import type { Contact, Interaction } from '@/types.d.ts'
 
+// function loadContactIDs() {
+//   const contacts = localStorage.getItem('contact-reminder-contacts')
+//   return contacts ? JSON.parse(contacts) : contacts
+// }
+
 export const useStore = defineStore('store', () => {
+  const router = useRouter()
   const contactIDs: string[] = reactive([])
   const interactionIDs: string[] = reactive([])
 
@@ -21,11 +28,19 @@ export const useStore = defineStore('store', () => {
   const debugMessages: Ref<string> = ref('')
 
   function addContact() {
-    highestContactID.value += 1
-
     //add a new contact to the contacts Map
+    const newContactID = crypto.randomUUID()
+    contactIDs.push(newContactID)
+    debugMessages.value = `Added new contact with ID of: ${newContactID}, and contactIDs is now ${JSON.stringify(contactIDs)}`
+    // console.log(debugMessages.value)
 
     //prepare a router move to an edit view to fill in its details and save it
+    showContact(newContactID)
+  }
+
+  function showContact(contactID: string) {
+    console.log(`Opening view of Contact information for contactID: ${contactID}`)
+    router.push({ name: 'contactview', params: { contactID } })
   }
 
   function addInteraction() {

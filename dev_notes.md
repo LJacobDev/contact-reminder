@@ -91,11 +91,41 @@ then eventually better UI appearance
 
 ### expand on the pinia store functionality
 
-next I can fill out more store functionality for saving and loading, importing, exporting, and clearing, and then work out more about the contact and interaction data structures and views of how to show and edit them
+next I can fill out more store functionality for saving and loading, importing, exporting, and clearing,
 
 decide whether to autosave every action or give a save/cancel confirmation opportunity,
 
 probably giving it a save/cancel decision, BUT ALSO a temp autosave so that if the browser crashes they should have the last known unsaved edits able to be retrieved from localstorage
+
+### saving to local storage
+
+an array of all contact IDs would be stored as one localStorage item, with the key of 'contact-reminder-contacts'
+
+another array of interaction IDs at 'contact-reminder-interactions'
+
+these would be something like uuid values
+
+then, localstorage would have distinct setItem values for each contact, each interaction, as keys such as:
+
+contact-uuid(contact id)
+
+interaction-uuid
+
+(I was thinking of using 'highestContactID' and storing them as incrementing integers, but if I instead use uuids it will allow for easier importing of contacts from other places without them overwriting / conflicting with existing ones. This can make imports be addative instead of overwriting)
+
+there might be a tradeoff here for read/load times for large databases between using individual storage keys for each contact/interaction and the alternative of putting everything in a single JSON under one single key, but right now the impacts aren't evident at small size
+
+on initializing the app, the pinia store would retrieve 'contact-reminder-contacts/interactions' arrays and then those arrays could be sorted etc, and iterated across to load specific or all contacts, interactions from localStorage as needed, rather than just loading the entire database into memory at the start
+
+loading the contact-reminder-contacts key to contacts array from localStorage: it needs to return a string[] containing strings of uuid numbers if key exists and either null or [] if doesn't exist
+
+saving the contacts array to contact-reminder-contacts: contacts is string[] holding uuids as strings. it gets stringified and given to localStorage.setItem('contact-reminder-contacts', JSON.stringify(contacts))
+
+it should work without formatting concerns if the key is only made by a proper source, however I would still like to have error checking done on the contents read in during loading, so Array.isArray() and array.every(item => typeof item === "string"), though remember how this might begin to slow down loading for large data sets
+
+JSON.parse appears to throw errors too, so I'd like the reading to happen in a try/catch block to get any errors thrown and log or display them
+
+### work out more about the contact and interaction data structures and views of how to show and edit them
 
 ### adding an import/export feature so data can be transferred to other environments
 

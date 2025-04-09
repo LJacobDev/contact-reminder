@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import InteractionsView from '../views/InteractionsView.vue'
 import InteractionView from '../views/InteractionView.vue'
+import ContactView from '@/views/ContactView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,6 +25,7 @@ const router = createRouter({
     { path: '/', name: 'home', component: HomeView },
     { path: '/interactions', name: 'interactions', component: InteractionsView },
     { path: '/interaction', name: 'interaction', component: InteractionView },
+    { path: '/contacts/:contactID', name: 'contactview', component: ContactView },
   ],
 })
 
