@@ -439,3 +439,9 @@ the local server was not able to find built asset files because it was looking f
 divs work like nav buttons but makes the text selectable. I could either see if disabling text selection is possible or switch to buttons
 
 I've changed them to buttons and their styling has changed (not important now) and the text selection has gone away so I like this better this way for working with in development
+
+### adding functionality to buttons and some of the views
+
+the 'add contact' button has been given some functionality by giving the pinia store an addContact() function that creates a new uuid, adds it to the contactIDs array, and then uses the vue router to go to /contacts/contactID so that it can have its fields edited
+
+currently the ContactView component is just a duplicate of the InteractionView component to see the router working, and now it needs to have the Contact type's fields given to it for editing, saving (and add a cancel function that removes that contactID from the array if pressed)
