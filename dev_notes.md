@@ -81,7 +81,11 @@ to gain expertise sooner
 
 # Things to do next
 
-Build app functionality and eventually better UI appearance now that CI/CD pipeline is in place
+now that CI/CD pipeline is in place
+
+Build app functionality,
+
+then eventually better UI appearance
 
 ### move the contents of App.vue to a better organized layout file
 
@@ -89,17 +93,17 @@ Build app functionality and eventually better UI appearance now that CI/CD pipel
 
 next I can fill out more store functionality for saving and loading, importing, exporting, and clearing, and then work out more about the contact and interaction data structures and views of how to show and edit them
 
-decide whether to autosave every action or give a save/cancel confirmation opportunity, as well as probably giving it a save/cancel decision,
+decide whether to autosave every action or give a save/cancel confirmation opportunity,
 
-BUT ALSO a temp autosave so that if the browser crashes they should have the last known unsaved edits able to be retrieved from localstorage
+probably giving it a save/cancel decision, BUT ALSO a temp autosave so that if the browser crashes they should have the last known unsaved edits able to be retrieved from localstorage
+
+### adding an import/export feature so data can be transferred to other environments
 
 ### creating more test files
 
 I want there to be tests on the Vue components in `src/components/__tests__`
 
 I also want there to be tests for other files with typescript logic in them
-
-### adding an import/export feature so data can be transferred to other environments
 
 ### completing views and data structures
 
