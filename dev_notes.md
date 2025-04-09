@@ -87,6 +87,14 @@ Build app functionality,
 
 then eventually better UI appearance
 
+### make the contact details cancel button remove the newly added contactID, ONLY IF this is after having created a new contact.
+
+make the contact details cancel button remove the newly added contactID, ONLY IF this is after having created a new contact
+
+Otherwise, you would instead want the cancel button to just close the contact view and go to some other view like "contacts" or whatever was last being shown before this
+
+this could be done by having 'addContact' pass a get parameter or something like it indicating that it's added a new one that should be removed when cancel is pressed
+
 ### move the contents of App.vue to a better organized layout file
 
 ### expand on the pinia store functionality
