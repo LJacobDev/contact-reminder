@@ -49,6 +49,7 @@ const store = useStore()
   <main class="router-view">
     <RouterView />
   </main>
+  <p>Debug Messages: {{ store.debugMessages }}</p>
 </template>
 
 <style scoped>

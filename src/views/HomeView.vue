@@ -14,7 +14,6 @@ const store = useStore()
     <div>
       <p>Highest Contact ID: {{ store.highestContactID }}</p>
       <p>Highest Interaction ID: {{ store.highestInteractionID }}</p>
-      <p>Debug Messages: {{ store.debugMessages }}</p>
     </div>
   </main>
 </template>
